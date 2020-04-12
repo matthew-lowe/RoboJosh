@@ -14,9 +14,11 @@ async def on_ready():
 	# Unregister pre-set help command. Probably better ways to do it, but this works
 	bot.remove_command("help")
 
+	# Load files in extensions folder
 	for file in os.listdir("./extensions"):
 		if file.endswith(".py") and file != "extension_utils.py":
 			bot.load_extension("extensions." + file.split(".")[0])
+
 	print("Loaded extensions!")
 
 bot.run(open("token.txt", "r").read())
