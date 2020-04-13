@@ -15,16 +15,16 @@ class SimpleCommands(commands.Cog):
 		# If no specific command is chosen, show all commands
 		if req_command is None:
 			embed = discord.Embed(title="Help Menu")
-			await utils.style_embed(embed, ctx)
+			utils.style_embed(embed, ctx)
 			for command in self.bot.commands:
-				embed.add_field(name=f"**`{command.usage}`**", value=command.help, inline=False)
+				embed.add_field(name=f"`{command.usage}`", value=command.help, inline=False)
 			await ctx.send(embed=embed)
 		# Else, show the specific command given
 		else:
 			for command in self.bot.commands:
 				if command.name == req_command:
 					embed = discord.Embed(title=f"Help for {command.name}")
-					await utils.style_embed(embed, ctx)
+					utils.style_embed(embed, ctx)
 					embed.add_field(value=f"{command.help}", name=f"**Usage:** `{command.usage}`")
 					await ctx.send(embed=embed)
 					return
