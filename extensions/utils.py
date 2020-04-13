@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import datetime
 
+
 # Just some commonly used operations, excluding database stuff
 class Utils(commands.Cog):
 	def __init__(self, bot):

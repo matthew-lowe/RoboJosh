@@ -2,6 +2,7 @@ import datetime
 import discord
 from discord.ext import commands
 
+
 class InfoCommands(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
@@ -51,7 +52,7 @@ class InfoCommands(commands.Cog):
 		for role in member_roles:
 			role_string += f"<@&{role.id}> "
 
-		embed = discord.Embed(title=f"{user.name}#{user.discriminator}, timestamp=datetime.datetime.utcnow()")
+		embed = discord.Embed(title=f"{user.name}#{user.discriminator}")
 		embed.add_field(name="User ID:", value=user.id, inline=True)
 		embed.add_field(name="Display name:", value=member.display_name, inline=True)
 		embed.add_field(name="Account Created:", value=user.created_at.strftime('%A %d %b %Y, %I:%M %p'), inline=False)

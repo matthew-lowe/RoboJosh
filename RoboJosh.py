@@ -7,6 +7,7 @@ config = json.loads(open("config.json", "r").read())
 
 bot = commands.Bot(command_prefix=config["prefix"], )
 
+
 @bot.event
 async def on_ready():
 	print(f"Logged in as {bot.user.name} successfully!")
@@ -20,5 +21,6 @@ async def on_ready():
 			bot.load_extension("extensions." + file.split(".")[0])
 
 	print("Loaded extensions!")
+
 
 bot.run(open("token.txt", "r").read())
