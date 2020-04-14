@@ -25,7 +25,7 @@ async def on_ready():
 
 # Manage extensions from a command
 # TODO: check with database to ensure random users can't unload extensions lol
-@bot.command()
+@bot.command(hidden=True)
 async def extensions(ctx, method, extension):
 	try:
 		if method == "load":

@@ -21,7 +21,7 @@ class Utils(commands.Cog):
 		embed.color = color
 
 	# Get's the target user from an arg and context
-	def get_target(self, ctx, target):
+	def get_target(self, ctx, target = None):
 		user = None
 		if target is None:
 			user = ctx.author
